@@ -1,7 +1,7 @@
 
 //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set(changeColor(colorsArr));
+  chrome.storage.sync.set(color);
   console.log("Does this print?"); 
 });
 
@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(() => {
     //Stretch: Have the background continuously alternate colors
 
 ///testing 1 color: 
-let color = '#3aa757';
+let color = '#08F7FE';
 
 //create function assigned to an array of preset party colors 
   //LINK TO COLOR PALLETTE: https://www.shutterstock.com/blog/neon-color-palettes

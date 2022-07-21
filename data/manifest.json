@@ -7,11 +7,11 @@
     "service_worker": "background.js"
   },
   //content scripts help identify which URLs the app should work on.
-  "content_scripts": [ {
-    //the matches value below indicates that any URL that begins with http:// followed by any text should run this app 
-    "matches": ["http://*"],
-    "js": ["background.js"]
-  } ],
+  // "content_scripts": [ {
+  //   //the matches value below indicates that any URL that begins with http:// followed by any text should run this app 
+  //   "matches": ["http://*"],
+  //   "js": ["background.js"]
+  // } ],
   "permissions": ["storage", "activeTab", "scripting"]
 }
 
