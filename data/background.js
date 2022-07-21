@@ -1,8 +1,8 @@
 
 //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log('Default background color set to %cgreen', `color: ${color}`);
+  chrome.storage.sync.set(changeColor(colorsArr));
+  console.log("Does this print?"); 
 });
 
 
@@ -16,22 +16,20 @@ let color = '#3aa757';
 
 //create function assigned to an array of preset party colors 
   //LINK TO COLOR PALLETTE: https://www.shutterstock.com/blog/neon-color-palettes
-const colors = ['#08F7FE', '#09FBD3', '#FE53BB', '#F5D300'];
+const colorsArr = ['#08F7FE', '#09FBD3', '#FE53BB', '#F5D300'];
 
 //create function that iterates through 
-function randomColor() {
-  return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
-}
-
-function setColor(){
-  colors.forEach( el => {
+function changeColor(array){
+  //iterate through the colors array 
+  array.forEach( el => {
+    //on each iteration, update the background color of the 'div' to the color at el of colors array 
     document.getElementById('div').style.backgroundColor = el;
-    setTimeout(setColor, 2000);
   });
- 
+  //use setTimeout to create loop of the colors 
+ setTimeout(changeColor, 2000);
 }
 
-setColor();
+
 
 
 
