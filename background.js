@@ -1,3 +1,5 @@
+///testing 1 color: 
+let color = '#08F7FE';
 
 //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
 chrome.runtime.onInstalled.addListener(() => {
@@ -11,8 +13,7 @@ chrome.runtime.onInstalled.addListener(() => {
     //MVP: Change to 1 specified color
     //Stretch: Have the background continuously alternate colors
 
-///testing 1 color: 
-let color = '#08F7FE';
+
 
 //create function assigned to an array of preset party colors 
   //LINK TO COLOR PALLETTE: https://www.shutterstock.com/blog/neon-color-palettes
