@@ -8,7 +8,7 @@
   },
   //content scripts help identify which URLs the app should work on.
   //Current Error: "an invalid value at content_scripts[1].exclude_matches[0]"
-  
+
   // "content_scripts": [ {
   //   //the matches value below indicates that any URL that begins with http:// followed by any text should run this app 
   //   "matches": ["http://*"],
@@ -16,7 +16,7 @@
   // } ],
   "permissions": ["storage", "activeTab", "scripting"], 
   "browser_action": {
-    "default_icon": "party-hat-icon-5.jpeg",
+    "default_icon": "32party-icon.gif",
     "popup": "shopcmp.htm" 
   }
 }
