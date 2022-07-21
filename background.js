@@ -3,7 +3,7 @@ let color = '#08F7FE';
 
 //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set(color);
+  chrome.storage.sync.set({color});
   console.log("Does this print?"); 
 });
 
