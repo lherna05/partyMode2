@@ -13,8 +13,10 @@ chrome.runtime.onInstalled.addListener(() => {
     //MVP: Change to 1 specified color
     //Stretch: Have the background continuously alternate colors
 
+chrome.storage.sync.get("color", ({ color }) => {
+document.body.style.backgroundColor = color;})
 
-
+/*
 //create function assigned to an array of preset party colors 
   //LINK TO COLOR PALLETTE: https://www.shutterstock.com/blog/neon-color-palettes
 const colorsArr = ['#08F7FE', '#09FBD3', '#FE53BB', '#F5D300'];
@@ -29,7 +31,7 @@ function changeColor(array){
   //use setTimeout to create loop of the colors 
  setTimeout(changeColor, 2000);
 }
-
+*/
 
 
 
