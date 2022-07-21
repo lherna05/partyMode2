@@ -1,7 +1,6 @@
 
 //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.browserAction.setIcon({ path: "party-hat-icon-5.jpeg" });
   chrome.storage.sync.set(color);
   console.log("Does this print?"); 
 });

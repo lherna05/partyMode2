@@ -12,7 +12,10 @@
   //   "matches": ["http://*"],
   //   "js": ["background.js"]
   // } ],
-  "permissions": ["storage", "activeTab", "scripting"]
+  "permissions": ["storage", "activeTab", "scripting"], 
+  "browser_action": {
+    "default_icon": "party-hat-icon-5.jpeg", 
+  }
 }
 
 
