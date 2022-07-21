@@ -13,8 +13,19 @@ chrome.runtime.onInstalled.addListener(() => {
     //MVP: Change to 1 specified color
     //Stretch: Have the background continuously alternate colors
 
-chrome.storage.sync.get("color", ({ color }) => {
-document.body.style.backgroundColor = color;})
+//inject setPageBackgroundColor into current page
+let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+chrome.scripting.executeScript({
+  target: { tabId: tab.id },
+  function: setPageBackgroundColor,})
+
+
+  function setPageBackgroundColor() {
+    chrome.storage.sync.get("color", ({ color }) => {
+      document.body.style.backgroundColor = color;
+    });
+  }
 
 /*
 //create function assigned to an array of preset party colors 
