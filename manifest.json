@@ -3,23 +3,49 @@
   "description": "Time to party!",
   "version": "1.0",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
-  //content scripts help identify which URLs the app should work on.
-  //Current Error: "an invalid value at content_scripts[1].exclude_matches[0]"
-
-  // "content_scripts": [ {
-  //   //the matches value below indicates that any URL that begins with http:// followed by any text should run this app 
-  //   "matches": ["http://*"],
-  //   "js": ["background.js"]
-  // } ],
-  "permissions": ["storage", "activeTab", "scripting"], 
-  "browser_action": {
-    "default_icon": "32party-icon.gif",
-    "popup": "shopcmp.htm" 
-  }
+  "content_scripts": [
+    {
+      "matches": ["https://developer.mozilla.org/*"],
+      "js" : ["./background2.js"]
+    }
+  ]
 }
+
+
+//background service worker 
+
+// "background": {
+  //     "service_worker": "background.js"
+// "permissions": ["storage", "activeTab", "scripting"], 
+
+
+
+
+
+
+
+// {
+//   "name": "Party Mode",
+//   "description": "Time to party!",
+//   "version": "1.0",
+//   "manifest_version": 3,
+//   "background": {
+//     "service_worker": "background.js"
+//   },
+//   // content scripts help identify which URLs the app should work on.
+//   // Current Error: "an invalid value at content_scripts[1].exclude_matches[0]"
+
+//   "content_scripts": [ {
+//     //the matches value below indicates that any URL that begins with http:// followed by any text should run this app 
+//     "matches": ["http://*"],
+//     "js": ["background.js"]
+//   } ],
+//   // "permissions": ["storage", "activeTab", "scripting"], 
+//   // "browser_action": {
+//   //   "default_icon": "32party-icon.gif",
+//   //   "popup": "shopcmp.htm" 
+//   }
+// }
 
 
 

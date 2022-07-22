@@ -1,32 +1,32 @@
-///testing 1 color: 
-let color = '#08F7FE';
+// ///testing 1 color: 
+// let color = '#08F7FE';
 
-//invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({color});
-  console.log("Does this print?"); 
-});
-
-
-// FEATURE 1: Background Color Change
-  //Description: once the partyMode extension is turned on, the app will change the background color. 
-    //MVP: Change to 1 specified color
-    //Stretch: Have the background continuously alternate colors
-
-//inject setPageBackgroundColor into current page
-let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-chrome.scripting.executeScript({
-  target: { tabId: tab.id },
-  function: setPageBackgroundColor,
-});
+// //invoke addListening on chrome's runtime.onInstalled function (will indicate what to listen for and what functionality to implement)
+// chrome.runtime.onInstalled.addListener(() => {
+//   chrome.storage.sync.set({color});
+//   console.log("Does this print?"); 
+// });
 
 
-  function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({ color }) => {
-      document.body.style.backgroundColor = color;
-    });
-  }
+// // FEATURE 1: Background Color Change
+//   //Description: once the partyMode extension is turned on, the app will change the background color. 
+//     //MVP: Change to 1 specified color
+//     //Stretch: Have the background continuously alternate colors
+
+// //inject setPageBackgroundColor into current page
+// let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+// chrome.scripting.executeScript({
+//   target: { tabId: tab.id },
+//   function: setPageBackgroundColor,
+// });
+
+
+// function setPageBackgroundColor() {
+//   chrome.storage.sync.get("color", ({ color }) => {
+//     document.body.style.backgroundColor = color;
+//   });
+// }
 
 /*
 //create function assigned to an array of preset party colors 
